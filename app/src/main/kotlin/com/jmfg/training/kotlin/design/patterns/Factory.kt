@@ -2,7 +2,7 @@ package com.jmfg.training.kotlin.design.patterns
 
 sealed class Pais
 object Mexico : Pais()
-class UK() : Pais() {
+class UK : Pais() {
     override fun equals(other: Any?): Boolean {
         return this === other
     }

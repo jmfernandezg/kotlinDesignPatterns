@@ -42,10 +42,20 @@ object Singleton {
 - Mejora la testability
 
 ### Abstract Factory
--
+
+- Un nivel arriba de factory
+- Funcionalidad sin preocuparse de la implementación
+- Separación de responsabilidades
+
 
 ### Builder
--
+
+- Usado cuando se tienen varios parámetros de inicialización
+  - Es mejor que hacer un constructor si hay parámetros opcionales
+  - 5 parámetros en combinación es mas de 100 constructores
+- Usado en Android
+  - Kotlin usa parámetros que se pueden referir por nombre
+
 
 ### Lazy Init
 -
