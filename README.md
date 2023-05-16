@@ -58,10 +58,19 @@ object Singleton {
 
 
 ### Lazy Init
--
+
+- Es usado para el manejo de memoria
+- Se evitan tener objetos grandes en memoria si no son utilizados
+- Inicializa el recurso cuando es utilizado, no cuando es declarado
+- Kotlin tiene dos maneras de hacer inicialización diferida
+  - `by lazy` que solo puede ser usado con `val`
+  - `lateinit` que solo puede ser usado con `var`
+
 
 ### Prototype
--
+
+- Permite hacer una copia del objeto
+- El objeto provee la funcionalidad de copia
 
 ## Tema 3: Patrones Estructurales
 
