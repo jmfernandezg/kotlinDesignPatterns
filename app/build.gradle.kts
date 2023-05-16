@@ -30,5 +30,5 @@ java {
 }
 
 application {
-    mainClass.set("com.jmfg.training.kotlin.designpatterns.AppKt")
+    mainClass.set("com.jmfg.training.kotlin.design.patterns.AppKt")
 }
