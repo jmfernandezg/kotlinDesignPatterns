@@ -137,11 +137,25 @@ stateDiagram-v2
 
 ### Composite
 
--
+- Compone objetos en estructuras de arbol
+- La funcionalidad puede ser representada por un arbol
+- Se manipulan los componentes como uno solo
 
 ### Proxy
 
--
+- Provee de funcionalidad antes y/o despues de llamar al objeto
+- Similar a facade, excepto que proxy tiene la misma interfaz del backend
+- Similar a decorador, excepto que proxy maneja el ciclo de vida de su objeto
+
+```mermaid
+
+flowchart LR
+  Cliente1-->|read| Proxy
+  Cliente2 -->|read| Proxy
+  Cliente3 -->|read| Proxy
+  Proxy --> |cache|Disco
+
+```
 
 ## Tema 4: Patrones de Comportamiento
 
