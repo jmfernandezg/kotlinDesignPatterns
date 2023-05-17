@@ -112,11 +112,28 @@ flowchart TB
 
 ### Facade
 
--
+- Provee una interface simple para funcionalidad compleja
+- Simplifica la implementacion de clientes
 
 ### Decorator
 
--
+- Pone nuevo comportamiento o funcionalidad a un objeto existe
+- Cambia el comportamiento existente
+- No se cambia el codigo original
+
+```mermaid
+
+stateDiagram-v2
+    state ApiService {
+      retrieveAPI
+        state NetworkComm {
+                sendNetworkMsg
+            state TCP/IP {
+                sendPacket
+            }
+        }
+    }
+```
 
 ### Composite
 
