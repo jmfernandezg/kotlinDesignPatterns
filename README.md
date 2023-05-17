@@ -18,7 +18,9 @@ Patrones de diseño para Kotlin
   - Como la estrategia afecta la estructura de la app
   - Como los objetos se comunican
 
-## Tema 2: Patrones de Creación
+---
+
+## Patrones de Creación
 
 ### Singleton
 
@@ -27,7 +29,7 @@ Patrones de diseño para Kotlin
   - Clases de utilería
 - Se declara la clase como `object`
 
-```kotlin 
+```kotlin
 
 object Singleton {
   init {
@@ -37,6 +39,7 @@ object Singleton {
 ```
 
 ### Factory
+
 - Provee el acceso a funcionalidad sin preocuparse por la implementación
 - Separación de responsabilidades
 - Mejora la testability
@@ -47,7 +50,6 @@ object Singleton {
 - Funcionalidad sin preocuparse de la implementación
 - Separación de responsabilidades
 
-
 ### Builder
 
 - Usado cuando se tienen varios parámetros de inicialización
@@ -55,7 +57,6 @@ object Singleton {
   - 5 parámetros en combinación es mas de 100 constructores
 - Usado en Android
   - Kotlin usa parámetros que se pueden referir por nombre
-
 
 ### Lazy Init
 
@@ -66,30 +67,63 @@ object Singleton {
   - `by lazy` que solo puede ser usado con `val`
   - `lateinit` que solo puede ser usado con `var`
 
-
 ### Prototype
 
 - Permite hacer una copia del objeto
 - El objeto provee la funcionalidad de copia
 
-## Tema 3: Patrones Estructurales
+---
+
+## Patrones Estructurales
 
 ### Adapter
--
+
+- Convierte la interfaz de una clase en una que el cliente espera
+- Convierte datos de un formato a otro
+- Es usado en Android con frecuencia
+
+```mermaid
+
+flowchart LR
+  Cliente -->|call| Destino
+  Destino --> |call-to-specific|Adaptador
+  Adaptador --> |specificCall|Adaptado
+
+```
 
 ### Bridge
--
 
-### Fachada
+- Clases con multiples propiedades ortogonales incrementan exponencialmente el arbol de herencia
+- Se divide la estructura en varias interfaces o clases
+- Se asocian por medio de un puente
+
+```mermaid
+
+flowchart TB
+  subgraph puente
+  Figura -->Circulo
+  Figura -->Cuadrado
+  end
+  Figura -->|contiene| Color
+  Color --> Rojo
+  Color --> Azul
+
+```
+
+### Facade
+
 -
 
 ### Decorator
+
 -
 
 ### Composite
+
 -
 
 ### Proxy
+
 -
 
 ## Tema 4: Patrones de Comportamiento
@@ -125,4 +159,3 @@ object Singleton {
 ### Memento
 
 -
-
