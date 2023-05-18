@@ -14,6 +14,6 @@ class FacadeTest {
 
         val guardado = repo.find()
 
-        assertEquals("admixn", guardado.username)
+        assertEquals("admin", guardado.username)
     }
 }

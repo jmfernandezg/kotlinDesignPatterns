@@ -161,11 +161,37 @@ flowchart LR
 
 ### Observer
 
--
+- Notifica a suscriptores de que un evento ha sucedido
+- Notifica a multiples objetos simultaneamente
+- Es una relacion uno a muchos 
+
+
+```mermaid
+
+flowchart TB
+  EventGenerador-->|generate| EventManager
+  EventManager -->|notify| SuscriberInterface
+  Suscriber1 -->|notify| SuscriberInterface
+  Suscriber2 -->|notify| SuscriberInterface
+  Suscriber3 -->|notify| SuscriberInterface
+
+```
 
 ### Chain of Responsibility
 
--
+- Define una cadena de manejadores para procesar una peticion
+- Cada manejador necesita una referencia al siguiente manejador en la cadena
+- Cada manejador procesa la peitcion y pasa al siguiente manejador
+- Las peticiones pueden ser de diferentes tipos
+
+```mermaid
+
+flowchart LR
+  Request --> Handler1
+  Handler1 --> Handler2
+  Handler2 --> result
+ 
+```
 
 ### Command
 

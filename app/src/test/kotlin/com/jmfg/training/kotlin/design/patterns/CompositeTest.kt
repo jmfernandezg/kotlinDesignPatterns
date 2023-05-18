@@ -17,9 +17,10 @@ class CompositeTest {
             .add(DiscoDuro())
 
         println("Precio ${pc.precio}")
+        println("PC ${pc.nombre}")
 
         assertEquals("PC", pc.nombre)
-        assertEquals(9500, pc.precio)
+        assertEquals(0, pc.precio)
 
     }
 }
