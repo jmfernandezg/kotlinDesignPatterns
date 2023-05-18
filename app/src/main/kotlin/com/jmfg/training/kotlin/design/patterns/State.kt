@@ -9,12 +9,12 @@ class Authorized(val username: String) : State()
 class Autorizador {
     private var state: State = UnAuthorized
 
-    val isAuthorized = when (state) {
+    fun isAuthorized() = when (state) {
         is Authorized -> true
         UnAuthorized -> false
     }
 
-    val username = when (val state = this.state) {
+    fun username() = when (val state = this.state) {
         is Authorized -> state.username
         UnAuthorized -> "UNKNOWN"
     }
@@ -27,5 +27,5 @@ class Autorizador {
         state = UnAuthorized
     }
 
-    override fun toString() = "Usuario $username esta autorizado? $isAuthorized"
+    override fun toString() = "Usuario ${username()} esta autorizado? ${isAuthorized()}"
 }

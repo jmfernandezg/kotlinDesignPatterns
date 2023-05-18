@@ -2,7 +2,7 @@ package com.jmfg.training.kotlin.design.patterns
 
 interface Cafetera {
     fun cafeRegular()
-    fun cafeExpresso()
+    fun cafeEspresso()
 }
 
 class CafeteraNormal : Cafetera {
@@ -10,13 +10,13 @@ class CafeteraNormal : Cafetera {
         println("Haciendo cafe regular")
     }
 
-    override fun cafeExpresso() {
+    override fun cafeEspresso() {
         println("Haciendo cafe espresso")
     }
 }
 
 class CafeteraAuto(private val cafetera: Cafetera) : Cafetera by cafetera {
-    override fun cafeExpresso() {
+    override fun cafeEspresso() {
         println("Auto: Haciendo cafe espresso")
     }
 

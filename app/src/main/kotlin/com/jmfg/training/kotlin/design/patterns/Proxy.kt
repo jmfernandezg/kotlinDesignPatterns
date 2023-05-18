@@ -9,7 +9,7 @@ class ImagenReal(private val nombre: String) : Imagen {
         println("Real: imagen desplegando...")
     }
 
-    fun leer() {
+    private fun leer() {
         println("Real: imagen leyendo de $nombre")
     }
 

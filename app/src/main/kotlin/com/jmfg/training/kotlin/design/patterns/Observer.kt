@@ -32,14 +32,12 @@ class EventManager(vararg ops: Event) {
 
     fun suscribe(eventType: Event?, listener: EventListener) = listeners[eventType]?.add(listener)
 
-    fun unsubscribe(eventType: Event?, listener: EventListener) = listeners[eventType]?.remove(listener)
-
     fun notify(eventType: Event?, file: File?) = listeners[eventType]?.forEach { it.update(eventType, file) }
 }
 
 class Editor {
     var events = EventManager(OPEN, SAVE)
-    var file: File? = null
+    private var file: File? = null
 
     fun open(path: String) {
         file = File(path)

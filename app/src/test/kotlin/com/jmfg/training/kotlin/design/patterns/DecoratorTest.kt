@@ -10,7 +10,7 @@ class DecoratorTest {
         val cafeAuto = CafeteraAuto(cafeNormal)
 
         cafeAuto.cafeRegular()
-        cafeAuto.cafeExpresso()
+        cafeAuto.cafeEspresso()
         cafeAuto.cafeLatte()
     }
 }

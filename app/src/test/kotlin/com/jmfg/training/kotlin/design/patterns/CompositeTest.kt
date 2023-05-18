@@ -20,7 +20,7 @@ class CompositeTest {
         println("PC ${pc.nombre}")
 
         assertEquals("PC", pc.nombre)
-        assertEquals(0, pc.precio)
+        assertEquals(9500, pc.precio)
 
     }
 }

@@ -1,6 +1,7 @@
 package com.jmfg.training.kotlin.design.patterns
 
 import org.junit.jupiter.api.Test
+import kotlin.test.assertContains
 
 class ChainOfResponsibilityTest {
 
@@ -8,14 +9,20 @@ class ChainOfResponsibilityTest {
     fun `Test Chain`() {
         val authHeader = AuthHeader("1234")
         val contentHeader = ContentTypeHeader("app/json")
-        val bodyHeader = BodyTypeHeader("<html><head><title>HEY THERE!</head></title></html>")
+        val bodyHeader = BodyTypeHeader(
+            """
+            {
+                "id": "1",
+                "name": "Obi-1",
+                "greeting": "Hello There"
+            }
+        """.trimIndent()
+        )
 
         authHeader.next = contentHeader
         contentHeader.next = bodyHeader
 
-
-        println(authHeader.addHeader("Encabezado de autenticación"))
-        println(contentHeader.addHeader("Encabezado sin auth"))
+        assertContains(authHeader.addHeader("---"), "Authorization: 1234")
 
     }
 }

@@ -4,13 +4,13 @@ interface Command {
     fun execute()
 }
 
-class AgregarOrden(val id: String) : Command {
+class AgregarOrden(private val id: String) : Command {
     override fun execute() {
         println("Agregando orden $id ")
     }
 }
 
-class PagarOrden(val id: String) : Command {
+class PagarOrden(private val id: String) : Command {
     override fun execute() {
         println("Pagando orden $id ")
     }

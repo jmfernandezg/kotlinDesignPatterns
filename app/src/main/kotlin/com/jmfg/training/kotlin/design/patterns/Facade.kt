@@ -4,7 +4,7 @@ class AlmacenamientoComplejo(private val path: String) {
     private val cache: HashMap<String, String>
 
     init {
-        println("Leyendo datos de ${path}")
+        println("Leyendo datos de $path")
         cache = HashMap()
     }
 

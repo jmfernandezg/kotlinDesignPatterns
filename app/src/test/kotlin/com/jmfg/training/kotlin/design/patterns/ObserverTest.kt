@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 class ObserverTest {
 
     @Test
-    fun `probarObserver`() {
+    fun `Probar Observer`() {
         val editor = Editor()
         val logs = LogListener()
         val mails = EmailListener()

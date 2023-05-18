@@ -24,10 +24,12 @@ interface DbDataConverter {
     fun convertir(lista: List<DbData>): List<DisplayData>
 }
 
-class DisplayDataAdapter(val display: DataDisplay) : DbDataConverter {
+class DisplayDataAdapter(private val display: DataDisplay) : DbDataConverter {
     override fun convertir(lista: List<DbData>): List<DisplayData> {
         return lista.map {
-            DisplayData(it.pos, it.cantidad.toString())
+            val data = DisplayData(it.pos, it.cantidad.toString())
+            display.display(data)
+            data
         }
     }
 }

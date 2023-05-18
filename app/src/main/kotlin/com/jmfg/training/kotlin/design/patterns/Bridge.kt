@@ -5,7 +5,7 @@ interface Dispositivo {
     fun getName(): String
 }
 
-class Radio() : Dispositivo {
+class Radio : Dispositivo {
     override var volumen: Int = 0
     override fun getName() = "RADIO"
 }

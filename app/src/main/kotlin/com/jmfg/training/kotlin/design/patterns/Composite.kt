@@ -8,7 +8,9 @@ open class Equipo(
 open class Composite(nombre: String) : Equipo(0, nombre) {
     private val equipos = mutableListOf<Equipo>()
 
-    override val precio = equipos.sumOf { it.precio }
+    override val precio
+        get() = equipos.sumOf { it.precio }
+
     fun add(equipo: Equipo) = apply { equipos.add(equipo) }
 
 }
