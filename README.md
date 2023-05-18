@@ -195,15 +195,29 @@ flowchart LR
 
 ### Command
 
--
+- Una peticion esta envuelta en un objeto que tiene toda la informacion para procesarla
+- El objeto es pasado al manejador correcto, o despachador
 
 ### Strategy
+ 
+- Describe un algoritmo que puede ser cambiado en ejecucion
+- El objeto contiene la logica algoritmica
+- El objeto de contexto puede manejar el objeto algoritmico
 
--
+```mermaid
+
+flowchart TB
+  Cliente --> Ejecutor
+  Estrategia1 --> Ejecutor
+  Estrategia2 --> Ejecutor
+  Estrategia3 --> Ejecutor
+ 
+```
 
 ### State
 
--
+- Un objeto cambia su comportamiento de acuerdo al estado interno
+- En cada momento en particular, hay un numero finito de estados 
 
 ### Visitor
 
