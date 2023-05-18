@@ -218,6 +218,7 @@ flowchart TB
 
 - Un objeto cambia su comportamiento de acuerdo al estado interno
 - En cada momento en particular, hay un numero finito de estados 
+- El estado puede ser encapsulado en un objeto
 
 ### Visitor
 

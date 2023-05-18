@@ -27,5 +27,11 @@ class ReporteMensual : Reporte<Long> {
     override fun visit(contract: SupportContract) = contract.costoMensual
 
     override fun visit(contract: TimeContract) = contract.costoHora * contract.horas
+}
+
+class ReporteAnual : Reporte<Long> {
+    override fun visit(contract: FixedContract) = contract.costoAnual
+    override fun visit(contract: SupportContract) = contract.costoMensual * 12
+    override fun visit(contract: TimeContract) = contract.costoHora * contract.horas
 
 }
