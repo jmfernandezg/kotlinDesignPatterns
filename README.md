@@ -11,7 +11,7 @@ Patrones de diseño para Kotlin
   - Como los objetos y componentes de la aplicación se relacionan
   - Como se estructura el código para lograr
     - Separación de responsabilidades
-    - Escalabilidad
+    - Mejora lo escalable de la aplicación
     - Testability
 - Comportamiento
   - Como los objetos funcionan dentro del código
@@ -26,14 +26,14 @@ Patrones de diseño para Kotlin
 
 - Cuando se necesita solo una instancia de la clase
   - Punto de acceso único (red, bases de datos, etc)
-  - Clases de utilería
+  - Clases de utilidad
 - Se declara la clase como `object`
 
 ```kotlin
 
 object Singleton {
   init {
-    // lógica de inicialización
+    // lógica
   }
 }
 ```
@@ -52,7 +52,7 @@ object Singleton {
 
 ### Builder
 
-- Usado cuando se tienen varios parámetros de inicialización
+- Usado cuando se tienen varios parámetros de inicio
   - Es mejor que hacer un constructor si hay parámetros opcionales
   - 5 parámetros en combinación es mas de 100 constructores
 - Usado en Android
@@ -63,7 +63,7 @@ object Singleton {
 - Es usado para el manejo de memoria
 - Se evitan tener objetos grandes en memoria si no son utilizados
 - Inicializa el recurso cuando es utilizado, no cuando es declarado
-- Kotlin tiene dos maneras de hacer inicialización diferida
+- Kotlin tiene dos maneras de hacer inicio diferido
   - `by lazy` que solo puede ser usado con `val`
   - `lateinit` que solo puede ser usado con `var`
 
@@ -93,7 +93,7 @@ flowchart LR
 
 ### Bridge
 
-- Clases con multiples propiedades ortogonales incrementan exponencialmente el arbol de herencia
+- Clases con multiples propiedades ortogonales incrementan exponencialmente el árbol de herencia
 - Se divide la estructura en varias interfaces o clases
 - Se asocian por medio de un puente
 
@@ -113,13 +113,13 @@ flowchart TB
 ### Facade
 
 - Provee una interface simple para funcionalidad compleja
-- Simplifica la implementacion de clientes
+- Simplifica la implementación de clientes
 
 ### Decorator
 
 - Pone nuevo comportamiento o funcionalidad a un objeto existe
 - Cambia el comportamiento existente
-- No se cambia el codigo original
+- No se cambia el código original
 
 ```mermaid
 
@@ -137,13 +137,13 @@ stateDiagram-v2
 
 ### Composite
 
-- Compone objetos en estructuras de arbol
-- La funcionalidad puede ser representada por un arbol
+- Compone objetos en estructuras de árbol
+- La funcionalidad puede ser representada por un árbol
 - Se manipulan los componentes como uno solo
 
 ### Proxy
 
-- Provee de funcionalidad antes y/o despues de llamar al objeto
+- Provee de funcionalidad antes y/o después de llamar al objeto
 - Similar a facade, excepto que proxy tiene la misma interfaz del backend
 - Similar a decorador, excepto que proxy maneja el ciclo de vida de su objeto
 
@@ -162,26 +162,26 @@ flowchart LR
 ### Observer
 
 - Notifica a suscriptores de que un evento ha sucedido
-- Notifica a multiples objetos simultaneamente
-- Es una relacion uno a muchos 
+- Notifica a multiples objetos simultáneamente
+- Es una relación uno a muchos 
 
 
 ```mermaid
 
 flowchart TB
   EventGenerador-->|generate| EventManager
-  EventManager -->|notify| SuscriberInterface
-  Suscriber1 -->|notify| SuscriberInterface
-  Suscriber2 -->|notify| SuscriberInterface
-  Suscriber3 -->|notify| SuscriberInterface
+  EventManager -->|notify| SubscriberInterface
+  Subscriber1 -->|notify| SubscriberInterface
+  Subscriber2 -->|notify| SubscriberInterface
+  Subscriber3 -->|notify| SubscriberInterface
 
 ```
 
 ### Chain of Responsibility
 
-- Define una cadena de manejadores para procesar una peticion
-- Cada manejador necesita una referencia al siguiente manejador en la cadena
-- Cada manejador procesa la peitcion y pasa al siguiente manejador
+- Define una cadena de procesadores para manejar una solicitud
+- Cada procesador necesita una referencia al siguiente procesador en la cadena
+- Cada procesador procesa la petición y pasa al siguiente procesador
 - Las peticiones pueden ser de diferentes tipos
 
 ```mermaid
@@ -195,14 +195,14 @@ flowchart LR
 
 ### Command
 
-- Una peticion esta envuelta en un objeto que tiene toda la informacion para procesarla
-- El objeto es pasado al manejador correcto, o despachador
+- Una solicitud esta envuelta en un objeto que tiene toda la información para procesarla
+- El objeto es pasado al procesador correcto, o despachador
 
 ### Strategy
  
-- Describe un algoritmo que puede ser cambiado en ejecucion
-- El objeto contiene la logica algoritmica
-- El objeto de contexto puede manejar el objeto algoritmico
+- Describe un algoritmo que puede ser cambiado en ejecución
+- El objeto contiene la lógica algorítmica
+- El objeto de contexto puede manejar el objeto algorítmico
 
 ```mermaid
 
@@ -222,11 +222,19 @@ flowchart TB
 
 ### Visitor
 
--
+- Separa el algoritmo y el objeto
+- Hay dos conceptos
+  - Visitor
+  - Elemento
+- El Elemento acepta Visitor
+- El Visitor hacen la operación sobre los elementos
+
 
 ### Mediator
 
--
+- Provee un objeto central usado para la comunicación entre objetos
+- Los objetos no hablan entre si, solo entre un mediador
+- Se reduce la dependencia entre objetos
 
 ### Memento
 
